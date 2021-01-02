@@ -6,7 +6,6 @@ const { User, validateUser } = require('../../model/user');
 
 module.exports = async(req, res, next) => {
 
-
     try {
         await validateUser(req.body)
     } catch (e) {
