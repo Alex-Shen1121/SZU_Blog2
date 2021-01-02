@@ -9,16 +9,16 @@ const bodyPaser = require('body-parser');
 const session = require('express-session');
 //导入art-template模板引擎
 const template = require('art-template');
-//导入dataformat第三方模块
-const dataformat = require('dataformat');
+//导入dateformat第三方模块
+const dateFormat = require('dateformat');
 //创建网站服务器
 const app = express();
 //数据库连接
 require('./model/connect');
 //处理post请求参数
-app.use(bodyPaser.urlencoded({ extended: false }))
-    // require('./model/user');
-    //配置session
+app.use(bodyPaser.urlencoded({ extended: false }));
+// require('./model/user');
+//配置session
 app.use(session({ secret: 'secret key' }));
 
 //告诉express框架模板所在位置
@@ -28,7 +28,7 @@ app.set('view engine', 'art');
 //当渲染模板后缀为art的模板时 所使用的模板引擎是什么
 app.engine('art', require('express-art-template'));
 //向模板内部导入dateformate变量
-template.defaults.imports.dataFormat = dataformat;
+template.defaults.imports.dateFormat = dateFormat;
 
 //开放静态资源文件
 app.use(express.static(path.join(__dirname, 'public')));

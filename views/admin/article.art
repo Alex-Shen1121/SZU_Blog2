@@ -1,6 +1,6 @@
- {{extend './common/layout.art'}} {{block'main'}}
+{{extend './common/layout.art'}} {{block'main'}}
 <!-- 头部 -->
-{{include './common/header.art'}};
+{{include './common/header.art'}}
 <!-- /头部 -->
 <!-- 主体内容 -->
 <div class="content">
@@ -31,7 +31,7 @@
                 <tr>
                     <td>{{@$value._id}}</td>
                     <td>{{$value.title}}</td>
-                    <td>{{dataFormat($value.publishDate,'yyyy-mm-dd')}}</td>
+                    <td>{{dateFormat($value.publishDate,'yyyy-mm-dd')}}</td>
                     <td>{{$value.author.username}}</td>
                     <td>
                         <a href="/admin/article-edit?id={{@$value._id}}" class="glyphicon glyphicon-edit"></a>
