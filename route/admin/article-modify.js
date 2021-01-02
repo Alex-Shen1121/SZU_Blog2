@@ -1,15 +1,25 @@
 const { Article } = require('../../model/article');
 
-module.exports = (req, res, next) => {
+module.exports = async (req, res, next) => {
     //接收客户端传递过来的请求参数
-    // const { username, email, role, state, password } = req.body;
+    const { cover,title,publishDate,content } = req.body;
     //即将修改的文章id
-    res.send('ok');
-    return;
+    // res.send('ok');
+    // return;
     const id = req.query.id;
 
-    res.send(id);
-    // let user = await User.findOne({ _id: id });
+    // res.send(id);
+    let article = await Article.findOne({ _id: id });
+    // res.send(article);
+
+    await article.updateOne({ _id: id }, {
+        cover:cover,
+        title:title,
+        publishDate:publishDate,
+        content:content
+    });
+    //将页面重定向到用户列表页面
+    res.redirect('/admin/article');
 
     // const isValid = await bcrypt.compare(password, user.password);
     // //密码比对成功
