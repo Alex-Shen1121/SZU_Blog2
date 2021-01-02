@@ -1,10 +1,12 @@
 //引用express框架
 const express = require('express');
+const session = require('express-session');
+const { func } = require('joi');
 
 
 //创建博客展示页面路由
-const admin = express.Router()
-    //实现登陆功能
+const admin = express.Router();
+//实现登陆功能
 admin.post('/login', require('./admin/login'));
 //渲染登录页面
 admin.get('/login', require('./admin/loginPage'));
@@ -31,6 +33,16 @@ admin.post('/article-add', require('./admin/article-add'));
 admin.get('/article-delete', require("./admin/article-delete"));
 //创建实现用户修改功能路由
 admin.post('/article-modify', require('./admin/article-modify'));
+
+admin.get('/logout',(req,res)=>{
+    //删除session
+    req,session.destroy(function(){
+        //删除cookie
+        res.clearCookie('connect.sid');
+        res.redirect('/admin/login');
+    });
+    
+});
 
 //将路由对象做为模块成员进行导出
 module.exports = admin;

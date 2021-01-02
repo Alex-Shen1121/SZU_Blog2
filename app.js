@@ -19,7 +19,14 @@ require('./model/connect');
 app.use(bodyPaser.urlencoded({ extended: false }));
 // require('./model/user');
 //配置session
-app.use(session({ secret: 'secret key' }));
+// 配置session
+app.use(session({
+	secret: 'secret key',
+	saveUninitialized: false,
+	cookie: {
+		maxAge: 24 * 60 * 60 * 1000
+	}
+}));
 
 //告诉express框架模板所在位置
 app.set('views', path.join(__dirname, 'views'));
