@@ -14,7 +14,7 @@
                 <span>{{dateFormat($value.publishDate,'yyyy-mm-dd')}}</span>
             </div>
             <div class="brief">
-                {{$value.content}}
+                {{@$value.content.replace(/<[^>]+>/g, '').substr(0, 50) + '...'}}
             </div>
         </div>
     </li>
