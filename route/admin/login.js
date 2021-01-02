@@ -22,11 +22,21 @@ module.exports=async(req, res) => {
           //
           if(isValid){
               //登陆成功
+              //将用户名存储在请求对象中
               req.session.username=user.username;
+              //将用户角色存储在session对象中
+              req.session.role=user.role;
               // res.send('登陆成功')
               req.app.locals.userInfo=user;
-              //重定向到用户列表页面
-              res.redirect('/admin/user');
+              //对用户的角色进行判断
+              if(user.role=='admin'){
+                  //重定向到用户列表页面
+                  res.redirect('/admin/user');
+              }else{
+                  //重定向到博客首页
+                  res.redirect('/home');
+              }
+              
           }
           else {
               //登陆失败
