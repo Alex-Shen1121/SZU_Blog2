@@ -27,7 +27,8 @@ admin.get('/article', require("./admin/article"));
 admin.get('/article-edit', require("./admin/article-edit"));
 //实现文章添加功能的路由
 admin.post('/article-add',require('./admin/article-add'))
-
+//删除文章功能模块
+admin.get('/article-delete',require("./admin/article-delete"));
 
 //将路由对象做为模块成员进行导出
 module.exports = admin;
