@@ -21,7 +21,7 @@ module.exports =  (req, res) => {
         // console.log(files.cover.path.split('public')[1]);
         // res.send(files);
         await Article.updateOne({ _id: id }, {
-            cover:fields.cover,
+            cover:files.cover.path.split('public')[1],
             title:fields.title,
             publishDate:fields.publishDate,
             content:fields.content
