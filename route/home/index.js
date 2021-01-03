@@ -9,9 +9,6 @@ module.exports = async(req, res) => {
     // let result = await pagination(Article).page(1).size(4).display(5).find().populate('author').exec();
     // var id=req.app.locals.userInfo.id;
     // console.log(req.app.locals.userInfo);
-    console.log(req.url );
-
-
     let result = await Article.find().populate('author').lean();
 
     // res.send('欢迎来到博客首页');

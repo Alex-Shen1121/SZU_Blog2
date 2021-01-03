@@ -17,7 +17,6 @@ module.exports=(req,res)=>{
         //3.files对象类型 保存了和上传文件相关的数据
         // console.log(files.cover.path.split('public')[1]);
         // res.send(files);
-        console.log('update');
         await Article.create({
             title:fields.title,
             author:fields.author,
