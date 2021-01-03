@@ -13,9 +13,9 @@
             </div>
             <div class="article-content">
                 {{@article.content}}
-                </div>
+            </div>
             <div class="article-comment">
-                {{if userInfo}}
+                {{if userInfo&&userInfo.state==0}}
                 <h4>评论</h4>
                 <form class="comment-form" action="/home/comment" method="post">
                     <textarea class="comment" name="content"></textarea>
@@ -26,7 +26,9 @@
                     </div>
                 </form>
                 {{else}}
-                <div><h2>先进行登录，再对文章进行评论</h2></div>
+                <div>
+                    <h2>先进行登录未被禁用的账户，再对文章进行评论</h2>
+                </div>
                 {{/if}}
                 <div class="comment-list">
                     {{each comments}}
