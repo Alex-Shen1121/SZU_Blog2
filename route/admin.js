@@ -31,7 +31,7 @@ admin.get('/article-edit', require("./admin/article-edit"));
 admin.post('/article-add', require('./admin/article-add'));
 //删除文章功能模块
 admin.get('/article-delete', require("./admin/article-delete"));
-//创建实现用户修改功能路由
+//创建实现文章修改功能路由
 admin.post('/article-modify', require('./admin/article-modify'));
 
 // admin.get('/logout',(req,res)=>{

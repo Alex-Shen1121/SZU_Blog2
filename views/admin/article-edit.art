@@ -59,7 +59,6 @@
 <script src="/admin/lib/ckeditor5/ckeditor.js"></script>
 <script type="text/javascript">
     let editor;
-
     ClassicEditor
         .create(document.querySelector('#editor'))
         .then(newEditor => {

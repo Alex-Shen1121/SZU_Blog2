@@ -9,7 +9,7 @@ module.exports = async(req, res) => {
     //如果当前传递了id参数
     if (id) {
         //修改操作
-        let article = await Article.findOne({ _id: id }).populate('author').lean();
+        let article = await Article.findOne({ _id: id });
         //渲染用户编辑页面
         res.render('admin/article-edit', {
             message: message,

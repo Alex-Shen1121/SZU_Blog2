@@ -4,6 +4,8 @@ const bcrypt = require('bcrypt');
 module.exports = async(req, res, next) => {
     //接收客户端传递过来的请求参数
     const { username, email, role, state, password } = req.body;
+    console.log(req.body);
+    
     //即将修改的用户id
     const id = req.query.id;
 
