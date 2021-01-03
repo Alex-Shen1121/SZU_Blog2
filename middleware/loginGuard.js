@@ -7,7 +7,7 @@ const guard=(req,res,next)=>{
         res.redirect('/admin/login');
     }
     else {
-         if(req.url!='/login'&&req.session.role=='normal'){
+         if(req.session.role=='normal'){
             //让它跳转到博客首页，阻止程序向下执行
             return res.redirect('/home/');
         }

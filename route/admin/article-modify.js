@@ -3,16 +3,12 @@ const { Article } = require('../../model/article');
 module.exports = async (req, res, next) => {
     //接收客户端传递过来的请求参数
     const { cover,title,publishDate,content } = req.body;
-    //即将修改的文章id
-    // res.send('ok');
-    // return;
-    const id = req.query.id;
 
-    // res.send(id);
+    const id = req.query.id;
+    console.log(id);
     let article = await Article.findOne({ _id: id });
-    // res.send(article);
-    console.log(1000);
-    await article.updateOne({ _id: id }, {
+
+    await Article.updateOne({ _id: id }, {
         cover:cover,
         title:title,
         publishDate:publishDate,

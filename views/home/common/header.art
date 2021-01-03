@@ -16,7 +16,7 @@
                 
             </li>
             <li>
-                <a href={{userInfo?"/admin/login":"#"}} class="btn dropdown-toggle" data-toggle="dropdown">{{userInfo?"退出":""}}</a>
+                <a href={{userInfo?"/home/logout":"#"}} class="btn dropdown-toggle" data-toggle="dropdown">{{userInfo?"退出":""}}</a>
             </li>
         </ul>
         <!-- 网站导航结束 -->
