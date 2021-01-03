@@ -9,8 +9,9 @@ const guard=(req,res,next)=>{
     else {
          if(req.session.role=='normal'){
             //让它跳转到博客首页，阻止程序向下执行
-            return res.redirect('/home/');
+            if(req.url!='/article'&&req.url!='/article-edit'&&req.url!='/article-add'&&req.url!='/logout')   return res.redirect('/home/');
         }
+        
         //用户是登录状态
         next();
     }

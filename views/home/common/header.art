@@ -9,11 +9,14 @@
         <!-- 网站导航开始 -->
         <ul class="navigation fr">
             <li>
-                <a class="active" href="/home">首页</a>
+                <a class="" href="/home">首页</a>
             </li>
             <li>
                 <a href={{userInfo?"#":"/admin/login"}} class="btn dropdown-toggle" data-toggle="dropdown">{{userInfo?userInfo.username:"登录"}}</a>
                 
+            </li>
+             <li>
+                <a class="" href="/admin/article">发文章</a>
             </li>
             <li>
                 {{if userInfo}}
