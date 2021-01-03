@@ -11,7 +11,7 @@ module.exports = async (req, res, next) => {
     // res.send(id);
     let article = await Article.findOne({ _id: id });
     // res.send(article);
-
+    console.log(1000);
     await article.updateOne({ _id: id }, {
         cover:cover,
         title:title,

@@ -34,15 +34,15 @@ admin.get('/article-delete', require("./admin/article-delete"));
 //创建实现用户修改功能路由
 admin.post('/article-modify', require('./admin/article-modify'));
 
-admin.get('/logout',(req,res)=>{
-    //删除session
-    req,session.destroy(function(){
-        //删除cookie
-        res.clearCookie('connect.sid');
-        res.redirect('/admin/login');
-    });
+// admin.get('/logout',(req,res)=>{
+//     //删除session
+//     req,session.destroy(function(){
+//         //删除cookie
+//         res.clearCookie('connect.sid');
+//         res.redirect('/admin/login');
+//     });
     
-});
+// });
 
 //将路由对象做为模块成员进行导出
 module.exports = admin;

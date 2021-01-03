@@ -13,8 +13,14 @@
 			  			文章管理
 			  		</a>
                 </li>
+                <li>
+                    <a class="item " href="/home">
+						<span class="glyphicon glyphicon-home"></span>
+						首页
+					</a>
+                </li>
             </ul>
             <div class="cprt">
-                Powered by <a href="http://www.itheima.com/" target="_blank">黑马程序员</a>
+                Powered by <a href="http://www.szu.edu.cn/" target="_blank">SZU</a>
             </div>
 </div>

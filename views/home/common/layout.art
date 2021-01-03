@@ -12,5 +12,5 @@
     {{block 'main'}}{{/block}}
 
 </body>
-
+ {{block 'script'}}{{/block}}
 </html>
