@@ -21,6 +21,7 @@ module.exports = async(req, res) => {
         // 添加操作
         res.render('admin/article-edit', {
             message: message,
+            article: null,
             link: '/admin/article-add',
             button: '添加'
         });

@@ -20,16 +20,26 @@
                     application/x-www-form-urlencoded
                     multipart/form-data 将表单数据编码成二进制类型
                     -->
-        <!-- /分类标题 -->
+        <!-- /分类标题 ////-->
         <form class="form-container" action="{{link}}" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label>标题</label>
+                
                 <input value="{{article&&article.title}}" type="text" class="form-control" name="title" placeholder="请输入文章标题">
             </div>
             <div class="form-group">
                 <label>作者</label>
+                 {{if article}}
                 <input value="{{@article&&article.author}}" name="author" type="text" class="form-control" readonly>
+                {{/if}}
+                    {{if !article}}
+                <input value="{{@userInfo&&userInfo.id}}" name="author" type="text" class="form-control" readonly>
+                    {{/if}}
+              
+    
+
             </div>
+            
             <div class="form-group">
                 <label>发布时间</label>
                 <input value="{{article&&dateFormat(article.publishDate,'yyyy-mm-dd')}}" name="publishDate" type="date" class="form-control">
@@ -56,7 +66,10 @@
 <!-- /主体内容 -->
 {{/block}} {{block'script'}}
 
-<script src="/admin/lib/ckeditor5/ckeditor.js"></script>
+<script src="/admin/lib/ckeditor5/ckeditor.js">
+
+</script>
+
 <script type="text/javascript">
     let editor;
     ClassicEditor
@@ -73,19 +86,16 @@
     //选择文件上传控件
     var file = document.querySelector('#file');
     var preview = document.querySelector('#preview');
-
     //当用户选择完以后
     file.onchange = function() {
         //1 创建文件读取对象
         var reader = new FileReader();
-
         //用户选择的文件列表
         //this.files[0]
         //2. 读取文件
         reader.readAsDataURL(this.files[0]);
         //3.监听onload事件
         reader.onload = function() {
-            console.log(reader.result)
                 //将文件读取的文件显示在页面上
             preview.src = reader.result;
         }

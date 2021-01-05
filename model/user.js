@@ -34,12 +34,9 @@ const userSchema = new mongoose.Schema({
         type: Number,
         default: 0
     }
-
-
 });
 //创建集合
 const User = mongoose.model('User', userSchema);
-
 async function createUser() {
     const salt = await bcrypt.genSalt(10);
     const pass = await bcrypt.hash('123456', salt);

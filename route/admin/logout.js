@@ -1,5 +1,4 @@
 module.exports=(req,res)=>{
-    console.log(100);
     req.session.destroy(function(){
     //删除cookie
     res.clearCookie('connect.sid');

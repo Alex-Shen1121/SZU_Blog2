@@ -8,6 +8,6 @@
     <script type="text/javascript">
         setTimeout(function(){
             location.href='/admin/login';  
-        },1000);    
+        },2000);    
     </script>
 {{/block}}
