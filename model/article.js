@@ -4,7 +4,7 @@ const mongoose=require('mongoose');
 const artcleschema=new mongoose.Schema({
     title:{
         type:String,
-        maxlength:40,
+        maxlength:100,
         minlength:4,
         required:[true,'请填写文章标题']
     },
